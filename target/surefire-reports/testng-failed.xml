@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="2" guice-stage="DEVELOPMENT" verbose="0" name="Failed suite [Suite]" parallel="tests">
+  <parameter name="browser" value="ie"/>
+  <test name="ChromeTest">
+    <parameter name="browser" value="chrome"/>
+    <classes>
+      <class name="com.amazon.testscript.VerifyKindleOrderPageTest"/>
+    </classes>
+  </test> <!-- ChromeTest -->
+  <test name="IETest">
+    <parameter name="browser" value="ie"/>
+    <classes>
+      <class name="com.amazon.testscript.VerifyKindleOrderPageTest"/>
+    </classes>
+  </test> <!-- IETest -->
+  <test name="IETest(failed)" parallel="tests">
+    <parameter name="browser" value="ie"/>
+    <classes>
+      <class name="com.amazon.testscript.VerifyKindleOrderPageTest">
+        <methods>
+          <include name="beforesuite"/>
+          <include name="verifyKindleOrder"/>
+          <include name="setupDriver"/>
+          <include name="setupDriver"/>
+          <include name="closeDriver"/>
+          <include name="beforeMethod"/>
+        </methods>
+      </class> <!-- com.amazon.testscript.VerifyKindleOrderPageTest -->
+    </classes>
+  </test> <!-- IETest(failed) -->
+  <test name="ChromeTest(failed)" parallel="tests">
+    <parameter name="browser" value="chrome"/>
+    <classes>
+      <class name="com.amazon.testscript.VerifyKindleOrderPageTest">
+        <methods>
+          <include name="beforesuite"/>
+          <include name="verifyKindleOrder"/>
+          <include name="setupDriver"/>
+          <include name="setupDriver"/>
+          <include name="closeDriver"/>
+          <include name="beforeMethod"/>
+        </methods>
+      </class> <!-- com.amazon.testscript.VerifyKindleOrderPageTest -->
+    </classes>
+  </test> <!-- ChromeTest(failed) -->
+</suite> <!-- Failed suite [Suite] -->
